@@ -4,8 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- ROM maintainer name -->
-    <string name="maintainer_name">Aradhea</string>
-    <string name="github_username">InVictusXV</string> 
-    <string name="telegram_username">Vrasteizz</string>
+    <!-- Maintainer Information -->
+    <string name="bliss_maintainer">Emil Wagenplast</string>
 </resources>
