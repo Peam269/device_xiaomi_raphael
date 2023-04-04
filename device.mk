@@ -53,7 +53,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-nad
+    $(LOCAL_PATH)/overlay-bliss
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -226,14 +226,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
-
-# Kernel Headers
-PRODUCT_VENDOR_KERNEL_HEADERS := device/xiaomi/raphael-kernel/sm8150/kernel-headers
-
-# Kernel
-LOCAL_KERNEL := device/xiaomi/raphael-kernel/Image.gz-dtb
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 # Health
 PRODUCT_PACKAGES += \
