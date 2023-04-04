@@ -8,7 +8,7 @@ HARDWARE="https://github.com/InVictusXV/android_hardware_xiaomi"
 DISPLAY="https://github.com/Peam269/hardware_qcom_display"
 
 MIUICAM="https://gitlab.com/SageOfD6Path/vendor_xiaomi_miuicamera -b miui"
-
+V4AFX="https://github.com/DanipunK1/vendor_v4afx"
 
 
 # Check if this is the initial setup or not
@@ -22,6 +22,7 @@ else
     rm -rf packages/resources/devicesettings > /dev/null 2>&1
     rm -rf hardware/xiaomi > /dev/null 2>&1
     rm -rf hardware/qcom-caf/sm8150/display > /dev/null 2>&1
+    rm -rf vendor/v4afx > /dev/null 2>&1
     rm -rf vendor/xiaomi/miuicamera > /dev/null 2>&1
     echo "Downloading dependencies (initial setup)..."
 fi
@@ -90,6 +91,15 @@ then
 else
     git clone $DISPLAY hardware/qcom-caf/sm8150/display 2>&1 | grep "fatal"
     echo "SM8150 Display downloaded"
+fi
+
+# ViPER4Android (sound mod)
+if [ -d "vendor/v4afx" ]
+then
+    git -C vendor/v4afx pull 2>&1 | grep "fatal"
+else
+    git clone $V4AFX vendor/v4afx 2>&1 | grep "fatal"
+    echo "ViPER4Android downloaded"
 fi
 
 # MIUI Camera

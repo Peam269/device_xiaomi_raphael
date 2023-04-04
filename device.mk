@@ -36,6 +36,9 @@ $(call inherit-product, vendor/xiaomi/raphael/raphael-vendor.mk)
 # MiuiCamera
 $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 
+# ViPER4Android
+$(call inherit-product, vendor/v4afx/config.mk)
+
 # Get Perf aspects
 $(call inherit-product, device/qcom/common/system/perf/qti-perf.mk)
 $(call inherit-product, device/qcom/common/vendor/perf-legacy/qti-perf-legacy.mk)
