@@ -33,8 +33,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/raphael/raphael-vendor.mk)
 
-# MiuiCamera
-$(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
+# GoogleCamera
+$(call inherit-product, vendor/GcamMGC/GcamMGC-vendor.mk)
 
 # OtoMusicPlayer
 PRODUCT_PACKAGES += \

@@ -7,7 +7,7 @@ DEVICESETTINGS="https://github.com/LineageOS/android_packages_resources_devicese
 HARDWARE="https://github.com/InVictusXV/android_hardware_xiaomi"
 DISPLAY="https://github.com/Peam269/hardware_qcom_display"
 
-MIUICAM="https://gitlab.com/SageOfD6Path/vendor_xiaomi_miuicamera -b miui"
+GCAM="https://gitlab.com/VEN0M98/vendor_GcamBSG"
 V4AFX="https://github.com/DanipunK1/vendor_v4afx"
 OTOMUSIC="https://github.com/onettboots/packages_apps_OtoMusicPlayer"
 
@@ -25,7 +25,7 @@ else
     rm -rf hardware/qcom-caf/sm8150/display > /dev/null 2>&1
     rm -rf vendor/v4afx > /dev/null 2>&1
     rm -rf packages/apps/OtoMusicPlayer > /dev/null 2>&1
-    rm -rf vendor/xiaomi/miuicamera > /dev/null 2>&1
+    rm -rf vendor/GcamMGC > /dev/null 2>&1
     echo "Downloading dependencies (initial setup)..."
 fi
 
@@ -95,6 +95,15 @@ else
     echo "SM8150 Display downloaded"
 fi
 
+# Google Camera
+if [ -d "vendor/GcamMGC" ]
+then
+    git -C vendor/GcamMGC pull 2>&1 | grep "fatal"
+else
+    git clone $GCAM vendor/GcamMGC 2>&1 | grep "fatal"
+    echo "Google Camera downloaded"
+fi
+
 # ViPER4Android (sound mod)
 if [ -d "vendor/v4afx" ]
 then
@@ -111,15 +120,6 @@ then
 else
     git clone $OTOMUSIC packages/apps/OtoMusicPlayer 2>&1 | grep "fatal"
     echo "Oto Music Player downloaded"
-fi
-
-# MIUI Camera
-if [ -d "vendor/xiaomi/miuicamera" ]
-then
-    git -C vendor/xiaomi/miuicamera pull 2>&1 | grep "fatal"
-else
-    git clone $MIUICAM vendor/xiaomi/miuicamera 2>&1 | grep "fatal"
-    echo "MIUI Camera downloaded"
 fi
 
 # Pull DeviceTree Changes
