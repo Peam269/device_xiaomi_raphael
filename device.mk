@@ -36,6 +36,10 @@ $(call inherit-product, vendor/xiaomi/raphael/raphael-vendor.mk)
 # MiuiCamera
 $(call inherit-product, vendor/xiaomi/miuicamera/config.mk)
 
+# OtoMusicPlayer
+PRODUCT_PACKAGES += \
+    OtoMusicPlayer
+
 # ViPER4Android
 $(call inherit-product, vendor/v4afx/config.mk)
 

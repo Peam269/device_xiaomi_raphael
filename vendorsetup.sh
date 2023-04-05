@@ -9,6 +9,7 @@ DISPLAY="https://github.com/Peam269/hardware_qcom_display"
 
 MIUICAM="https://gitlab.com/SageOfD6Path/vendor_xiaomi_miuicamera -b miui"
 V4AFX="https://github.com/DanipunK1/vendor_v4afx"
+OTOMUSIC="https://github.com/onettboots/packages_apps_OtoMusicPlayer"
 
 
 # Check if this is the initial setup or not
@@ -23,6 +24,7 @@ else
     rm -rf hardware/xiaomi > /dev/null 2>&1
     rm -rf hardware/qcom-caf/sm8150/display > /dev/null 2>&1
     rm -rf vendor/v4afx > /dev/null 2>&1
+    rm -rf packages/apps/OtoMusicPlayer > /dev/null 2>&1
     rm -rf vendor/xiaomi/miuicamera > /dev/null 2>&1
     echo "Downloading dependencies (initial setup)..."
 fi
@@ -100,6 +102,15 @@ then
 else
     git clone $V4AFX vendor/v4afx 2>&1 | grep "fatal"
     echo "ViPER4Android downloaded"
+fi
+
+# Oto Music Player
+if [ -d "packages/apps/OtoMusicPlayer" ]
+then
+    git -C packages/apps/OtoMusicPlayer pull 2>&1 | grep "fatal"
+else
+    git clone $OTOMUSIC packages/apps/OtoMusicPlayer 2>&1 | grep "fatal"
+    echo "Oto Music Player downloaded"
 fi
 
 # MIUI Camera
