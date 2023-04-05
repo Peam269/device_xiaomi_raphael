@@ -16,13 +16,8 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 $(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Bliss Flags
-#USE_GAPPS := true
-#NAD_BUILD_TYPE := OFFICIAL
-EXTRA_FOD_ANIMATIONS := true
-TARGET_SUPPORTS_QUICK_TAP := true
-
-# Pixel Offline Charging
-USE_PIXEL_CHARGING := true
+BLISS_BUILDTYPE := UNOFFICIAL
+EXTRA_UDFPS_ANIMATIONS := true
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
