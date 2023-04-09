@@ -158,6 +158,7 @@ ro.opengles.version=196610
 vendor.gralloc.disable_ubwc=0
 vendor.display.disable_scaler=1
 vendor.display.qdcm.disable_factory_mode=1
+persist.sys.sf.color_mode=9
 renderthread.skia.reduceopstasksplitting=true
 
 # IFAAService
