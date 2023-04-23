@@ -43,10 +43,6 @@ PRODUCT_PACKAGES += \
 # ViPER4Android
 $(call inherit-product, vendor/v4afx/config.mk)
 
-# Get Perf aspects
-$(call inherit-product, device/qcom/common/system/perf/qti-perf.mk)
-$(call inherit-product, device/qcom/common/vendor/perf-legacy/qti-perf-legacy.mk)
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
