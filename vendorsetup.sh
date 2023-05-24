@@ -7,7 +7,7 @@ DEVICESETTINGS="https://github.com/LineageOS/android_packages_resources_devicese
 HARDWARE="https://github.com/InVictusXV/android_hardware_xiaomi"
 DISPLAY="https://github.com/Peam269/hardware_qcom_display"
 
-GCAM="https://gitlab.com/VEN0M98/vendor_GcamBSG"
+GCAM="https://gitlab.com/Peam269/vendor_GcamBSG"
 V4AFX="https://github.com/DanipunK1/vendor_v4afx"
 OTOMUSIC="https://github.com/onettboots/packages_apps_OtoMusicPlayer"
 
