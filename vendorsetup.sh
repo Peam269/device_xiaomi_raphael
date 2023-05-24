@@ -1,6 +1,7 @@
-KERNEL="https://github.com/SOVIET-ANDROID/kernel_xiaomi_raphael"
+KERNEL="https://github.com/onettboots/bool-x_xiaomi_raphael"
 VENDOR="https://github.com/InVictusXV/vendor_xiaomi_raphael"
 
+CLANG="https://gitlab.com/onettboots/boolx-clang -b Clang-17.0_x86"
 QCOM_VENDOR="https://gitlab.com/yaosp/vendor_qcom_common"
 QCOM_DEVICE="https://github.com/yaap/device_qcom_common"
 DEVICESETTINGS="https://github.com/LineageOS/android_packages_resources_devicesettings"
@@ -48,6 +49,15 @@ then
 else
     git clone $KERNEL kernel/xiaomi/raphael --depth=1 2>&1 | grep "fatal"
     echo "Kernel downloaded"
+fi
+
+# Clang
+if [ -d "prebuilts/clang/host/linux-x86/boolx-clang" ]
+then
+    git -C prebuilts/clang/host/linux-x86/boolx-clang pull 2>&1 | grep "fatal"
+else
+    git clone $CLANG prebuilts/clang/host/linux-x86/boolx-clang --depth=1 2>&1 | grep "fatal"
+    echo "Clang downloaded"
 fi
 
 # QCOM common vendor
